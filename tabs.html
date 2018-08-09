@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	*{
+		margin:0;
+		border:0;
+		list-style: none;
+
+	}
+		.wrapper{
+			position: relative;
+			width:400px;
+			border:1px solid black;
+		}
+		.wrapper li{
+			height:150px;
+
+		}
+		.wrapper li span {
+			position: absolute;
+			display:inline-block;
+			width:200px;
+			height: 120px;
+			text-align: center;
+			line-height: 120px;
+			font-size: 30px;
+			color:deeppink;
+			z-index:99;
+
+		}
+		.wrapper li div{
+			position: absolute;
+			top:0;
+			left:0;
+			width:250px;
+			height:450px;
+			opacity: 0;
+			transition:all 2000ms cubic-bezier(0.25,0.1,0.25,1);
+			background-size: 100% 100%;
+		}
+		.wrapper li:nth-of-type(1) div{
+			background:url(AA.jpg);
+			background-size: 100% 100%;
+		
+		}
+		.wrapper li:nth-of-type(2) div{
+			background:url(BB.jpg);
+			background-size: 100% 100%;
+
+		
+		}
+		.wrapper li:nth-of-type(3) div{
+			background:url(CC.jpg);
+			background-size: 100% 100%;
+		
+		}
+		.wrapper li span:hover{
+			color:orange;
+		}
+		.wrapper li span:hover + div{
+			opacity: 1;
+			left:200px;
+
+		}
+
+	</style>
+</head>
+<body>
+	<ul class="wrapper">
+		<li>
+			<span>念阳枭</span>
+			<div></div>
+		</li>
+		<li>
+			<span>杨桀</span>
+			<div></div>
+		</li>
+		<li>
+			<span>李存勖</span>
+			<div></div>
+		</li>
+		
+	</ul>
+
+
+
+
+
+	<script type="text/javascript">
+	
+
+	</script>
+</body>
+</html>

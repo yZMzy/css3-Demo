@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            position:relative;
+            width:300px;
+            height:300px;
+            border:1px solid #000;
+            perspective: 1200px;
+        }
+        .box{
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-left: -100px;
+            margin-top: -100px;
+            width:200px;
+            height:200px;
+            transform-style: preserve-3d;
+            animation: rotate 4s infinite linear;
+
+
+        }
+        .box:hover{
+            animation-play-state: paused;
+        }
+        .demo{
+            position: absolute;
+            top:0;
+            left: 0;
+            width:200px;
+            height:200px;
+            line-height: 200px;
+            text-align: center;
+            font-size: 30px;
+            opacity: 0.6;
+            
+        }
+        .demo:nth-of-type(1){
+            background: red;
+            transform: translateZ(100px)
+        }
+        .demo:nth-of-type(2){
+            background: rgb(15, 228, 15);
+            transform: rotateX(90deg) translateZ(100px)
+        }
+        .demo:nth-of-type(3){
+            background: rgb(122, 122, 219);
+            transform: rotateY(180deg) translateZ(100px)
+        }
+        .demo:nth-of-type(4){
+            background: rgb(240, 181, 72);
+            transform: rotateX(-90deg) translateZ(100px)
+        }
+        .demo:nth-of-type(5){
+            background: rgb(10, 207, 233);
+            transform: rotateY(90deg) translateZ(100px)
+        }
+        .demo:nth-of-type(6){
+            background: palevioletred;
+            transform: rotateY(-90deg) translateZ(100px)
+        }
+        @keyframes rotate{
+            0%{
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+            }
+            100%{
+                transform: rotateX(360deg) rotate(360deg) rotateZ(360deg)
+            }
+
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div class="demo">a</div>
+            <div class="demo">b</div>
+            <div class="demo">c</div>
+            <div class="demo">d</div>
+            <div class="demo">e</div>
+            <div class="demo">f</div>
+        </div>
+
+    </div>
+</body>
+</html>

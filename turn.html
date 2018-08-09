@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+
+	<style type="text/css">
+	*{
+		margin:0;
+		border:0;
+		list-style: none;
+	}
+	.wrapper{
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+	}
+	.wrapper .turnTable{
+		width:100px;
+		height:100px;
+		border-radius: 50%;
+		border:30px solid #222;
+		background-image: url(AA.jpg);
+		background-size: 100%;
+		animation-name:turn;
+		animation-duration:10s;
+		animation-timing-function:linear;
+		animation-iteration-count:infinite;
+		animation-play-state:paused;
+	}
+	.wrapper .pin{
+		position:absolute;
+		top:-50px;
+		left:75px;
+		width:10px;
+		height:100px;
+		background-color: #ccc;
+		transform:rotate(-60deg);
+		transform-origin:top;
+
+	}
+	.wrapper .pinActive{
+		transform:rotate(-28deg);
+	}
+	@keyframes turn{
+		0%{
+			transform:rotate(0deg);
+		}
+		100%{
+			transform:rotate(360deg);
+		}
+	}
+	</style>
+</head>
+<body>
+	<button>开始/暂停</button>
+	<div class="wrapper">
+		<div class="turnTable"></div>
+		<div class="pin"></div>
+	</div>
+	<script type="text/javascript">
+
+	var oBtn = document.getElementsByTagName('button')[0];
+	var oPin = document.getElementsByClassName('pin')[0];
+	var oTable = document.getElementsByClassName('turnTable')[0];
+	var flag = false;
+	oBtn.onclick = function () {
+		flag = !flag;
+		if(flag) {
+			oPin.className = 'pin pinActive';
+			oTable.style.animationPlayState = 'running';
+		}else{
+			oPin.className = 'pin';
+			oTable.style.animationPlayState = 'paused';
+		}
+
+	}
+	</script>
+</body>
+</html>
